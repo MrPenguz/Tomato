@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.roboto-condensed-<uniquifier> {
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+::selection {
+  background: gray;
+}
+a{
+  
+}
+a.active hr{
+   
+    display: block;
+    transition: ease-in-out 0.5s;
+    color: rgb(249 115 22 / var(--tw-bg-opacity));
+
+}
+a.active p {
+            color: orange;
+}
+
+.hr:hover{
+            width: 100%;
+            transition: ease-in-out 0.5s;
+}
+
+a.active:hover{
+
+           hr{
+            width: 100%;
+            transition: ease-in-out 0.5s;
+           } 
+}
+.background{
+  background: url('./header_img.png') no-repeat;
+  background-size: contain;
+  height: 35vw;
+   width: 100%;
+  margin: 30px auto;
+  position: relative;
+  
+  
+}
+@media (max-width: 1080px) {
+  .background {
+    height: 45vw;
+    background-size: cover;
+    background-position: top center;
+  }
+}
+/* Smaller screens (tablets) */
+@media (max-width: 768px) {
+  .background {
+    height: 85vw;
+    background-size: cover;
+    background-position: top center;
+  }
+}
+
+/* Very small screens (mobile) */
+@media (max-width: 480px) {
+  .background {
+    height: 180vw;
+    margin: 20px auto;
+    background-size: cover;
+  }
+}
