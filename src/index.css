@@ -8,6 +8,7 @@
   font-family: "Roboto", sans-serif;
     font-weight: 700;
     font-style: normal;
+    scroll-behavior: smooth;
 }
 .roboto-black {
   font-family: "Roboto", serif;
@@ -42,6 +43,7 @@ a.active:hover{
             transition: ease-in-out 0.5s;
            } 
 }
+
 .background {
   background: url('./header_img.png') no-repeat center center;
   background-size: cover;
@@ -59,7 +61,7 @@ a.active:hover{
     background-position: top center;
   }
 }
-/* Smaller screens (tablets) */
+
 @media (max-width: 1100px) {
   .background {
     height: 85vw;
@@ -68,7 +70,7 @@ a.active:hover{
   }
 }
 
-/* Very small screens (mobile) */
+
 @media (max-width: 480px) {
   .background {
     height: 180vw;
@@ -76,3 +78,4 @@ a.active:hover{
     background-size: cover;
   }
 }
+

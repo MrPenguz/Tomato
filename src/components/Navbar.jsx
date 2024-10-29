@@ -1,27 +1,29 @@
+import { useState } from 'react'
 import React from 'react'
 import { assets } from '../assets/frontend_assets/assets'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 const Navbar = () => {
+    const [menu, setMenu] = useState('home')
     return (
         <div className='flex items-center justify-between sm:py-10     py-8   font-medium'>
             <img src={assets.logo} className=' w-36 flex  justify-start' alt="" />
             <ul className='hidden lg:flex sm:gap-6 text-sm text-gray-800'>
-                <NavLink to='/' className='flex flex-col items-center gap-1'>
+                <Link to='/' onClick={() => setMenu('home')} className={`flex flex-col items-center gap-1 ${menu === 'home' ? "active" : ""}`}>
                     <p className='uppercase'>Home</p>
                     <hr className='w-2/4 border-none h-[0.5px] bg-gray-800 hidden' />
-                </NavLink>
-                <NavLink to='/collection' className='flex flex-col items-center gap-1'>
+                </Link>
+                <a href='#menu' onClick={() => setMenu('menu')} className={`flex flex-col items-center gap-1 ${menu === 'menu' ? "active" : ""}`}>
                     <p className='uppercase'>Menu</p>
                     <hr className='w-2/4 border-none h-[0.5px] bg-gray-800 hidden' />
-                </NavLink>
-                <NavLink to='/about' className='flex flex-col items-center gap-1'>
-                    <p className='uppercase'>Mobile-app</p>
-                    <hr className='w-2/4 border-none h-[0.5px] bg-gray-800 hidden' />
-                </NavLink>
-                <NavLink to='/contact' className='flex flex-col items-center gap-1'>
+                </a>
+                <a href="#mobile-app" onClick={() => setMenu('mobile-app')} className={`flex flex-col items-center gap-1 ${menu === 'mobile-app' ? "active" : ""}`}>
+                    <p className="uppercase">Mobile-app</p>
+                    <hr className="w-2/4 border-none h-[0.5px] bg-gray-800 hidden" />
+                </a>
+                <a href='#contact-us' onClick={() => setMenu('contact')} className={`flex flex-col items-center gap-1 ${menu === 'contact' ? "active" : ""}`}>
                     <p className='uppercase'>Contact us</p>
                     <hr className='w-2/4 border-none h-[0.5px] bg-gray-800 hidden' />
-                </NavLink>
+                </a>
             </ul>
             <div className="flex items-center gap-4  sm:gap-6">
                 <img src={assets.search_icon} />
