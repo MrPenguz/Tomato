@@ -1,20 +1,32 @@
 import React, { useState, useContext } from 'react'
 import { assets } from '../assets/frontend_assets/assets'
 import { StoreContext } from '../context/StoreContext';
-
+import { motion } from 'framer-motion';
 const FoodItem = ({ _id, name, image, price, description }) => {
 
 
 
     const { setCartItems, cartItems, RemoveFromCart, AddToCart } = useContext(StoreContext);
     return (
-        <div className=" flex flex-col border rounded-xl  items-start text-start  shadow-lg ">
+        <motion.div initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className=" flex flex-col border rounded-xl  items-start text-start  shadow-lg ">
             <div className="w-full h-full relative top-0 ">
-                <img src={image} className="w-full  object-cover rounded-t-xl h-full relative " alt="" />
+                <motion.img initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    src={image} className="w-full  object-cover rounded-t-xl h-full relative " alt="" />
                 {
-                    !cartItems[_id] ? <img className=' absolute bottom-4 right-4 cursor-pointer   ' onClick={() => AddToCart(_id)} src={assets.add_icon_white} alt="" />
+                    !cartItems[_id] ? <motion.img initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className=' absolute bottom-4 right-4 cursor-pointer   ' onClick={() => AddToCart(_id)} src={assets.add_icon_white} alt="" />
                         : <div className=" bg-white bg-opacity-75  rounded-xl absolute bottom-4 right-4 cursor-pointer flex flex-row items-center gap-5 text-orange-500 duration-300 ease-in-out transition">
-                            <img onClick={() => RemoveFromCart(_id)} src={assets.remove_icon_red} alt="" />
+                            <motion.img initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                onClick={() => RemoveFromCart(_id)} src={assets.remove_icon_red} alt="" />
                             <p>{cartItems[_id]}</p>
                             <img onClick={() => AddToCart(_id)} src={assets.add_icon_green} alt="" />
                         </div>
@@ -28,7 +40,7 @@ const FoodItem = ({ _id, name, image, price, description }) => {
                 <p className="text-sm text-gray-500 h-[100px] sm:h-[80px]">{description}</p>
                 <p className='text-2xl text-orange-500 font-semibold'>{price}$</p>
             </div>
-        </div>
+        </motion.div>
 
 
     )

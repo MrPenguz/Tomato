@@ -9,7 +9,7 @@ const Footer = () => {
                 <div className="flex flex-col items-start">
                     <img src={assets.logo} alt="" className="mb-5 w-32 sm:w-40" />
                     <p className="text-sm max-w-xs md:max-w-sm lg:max-w-md">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate asperiores excepturi suscipit molestias veniam. Doloribus!
+                        At Tomato Company, we bring the freshest tomato flavors to your table. From sauces to salsas, each product is crafted to capture the taste of perfectly ripe tomatoes. Taste the difference
                     </p>
                     <div className="flex mt-5 gap-4">
                         <img src={assets.facebook_icon} className="w-8 h-8 rounded-full hover:bg-orange-500 duration-300" alt="Facebook" />

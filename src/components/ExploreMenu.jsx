@@ -1,13 +1,13 @@
 import React from 'react';
 import { assets, menu_list } from '../assets/frontend_assets/assets';
-
+import { motion } from 'framer-motion'
 const ExploreMenu = ({ category, setCategory }) => {
     console.log(category)
     return (
         <div>
             <div className="flex flex-col justify-center items-center text-center gap-2 " >
                 <h1 className="md:text-4xl text-2xl font-medium flex  ">- Explore <p className=' mx-2 text-orange-500'>Our</p> Menu -</h1>
-                <p className="text-base  my-5">
+                <p className="text-base  my-5" >
                     Discover a menu bursting with bold flavors and fresh ingredients. From light bites to hearty entrées, each dish promises to delight your taste buds!
 
                 </p>

@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
 import { assets } from '../assets/frontend_assets/assets'
-
+import { motion } from 'framer-motion'
 const LoginPopup = ({ setShowlogin }) => {
     const [currentState, setCurrentState] = useState("Sign Up")
     return (
-        <div className="fixed inset-0 z-10 bg-black bg-opacity-50 flex items-center justify-center p-4 sm:p-8">
+        <motion.div initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }} className="fixed inset-0 z-10 bg-black bg-opacity-50 flex items-center justify-center p-4 sm:p-8">
             <form className="bg-white border rounded-lg w-full max-w-md py-8 px-6 sm:px-8 flex flex-col gap-4">
                 <div className="flex justify-between items-center mb-6">
                     <h2 className="text-2xl sm:text-3xl">{currentState}</h2>
@@ -51,7 +54,7 @@ const LoginPopup = ({ setShowlogin }) => {
                     {currentState === "Sign Up" ? "Create account" : "Login"}
                 </button>
             </form>
-        </div>
+        </motion.div>
 
     )
 }
