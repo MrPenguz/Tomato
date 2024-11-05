@@ -38,9 +38,9 @@ Once the app is running, you can:
 
 ## Screenshot
 
-![Tomato App Screenshot](/image1.jpg) 
+![Tomato App Screenshot](./image1.jpg) 
 
-![Tomato App Screenshot2](/image2.jpg) 
+![Tomato App Screenshot2](./image2.jpg) 
 
 ## Contributing
 
