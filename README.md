@@ -24,7 +24,7 @@ To get started with **Tomato**, follow these simple steps:
    ```
 3. Start the development server
    ```bash
- npm run dev
+    npm run dev
     ```
 4. Open your browser and visit http://localhost:3000 to see the app in action!
 <!-- img -->
